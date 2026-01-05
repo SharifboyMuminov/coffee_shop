@@ -1,4 +1,5 @@
 import 'package:coffee_shop/extensions/context_extensions.dart';
+import 'package:coffee_shop/pages/auth/sign_in_page.dart';
 import 'package:coffee_shop/pages/widget/auth_main_button.dart';
 import 'package:flutter/material.dart';
 
@@ -76,7 +77,18 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   SizedBox(height: 41),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: AuthMainButton(onPressed: () {}),
+                    child: AuthMainButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return SignInPage();
+                            },
+                          ),
+                        );
+                      },
+                    ),
                   ),
                   SizedBox(height: 10),
                 ],

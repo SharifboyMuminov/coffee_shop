@@ -1,3 +1,4 @@
+import 'package:coffee_shop/pages/auth/sign_in_page.dart';
 import 'package:coffee_shop/pages/onboarding/onboarding_page.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const OnboardingPage(),
+      // home: const OnboardingPage(),
+      home: const SignInPage(),
     );
   }
 }
