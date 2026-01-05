@@ -1,4 +1,3 @@
-import 'package:coffee_shop/pages/auth/sign_up_page.dart';
 import 'package:coffee_shop/pages/widget/auth_main_button.dart';
 import 'package:coffee_shop/pages/widget/password_text_field.dart';
 import 'package:coffee_shop/pages/widget/phone_text_field.dart';
@@ -6,14 +5,14 @@ import 'package:coffee_shop/pages/widget/main_back_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatefulWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +39,7 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 SizedBox(height: 70),
                 Text(
-                  "Sign In",
+                  "Sign Up",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
@@ -61,6 +60,8 @@ class _SignInPageState extends State<SignInPage> {
 
                 PhoneNumberField(textInputAction: TextInputAction.next),
                 SizedBox(height: 20),
+                PasswordTextField(textInputAction: TextInputAction.next),
+                SizedBox(height: 20),
                 PasswordTextField(),
                 SizedBox(height: 10),
                 CupertinoButton(
@@ -77,7 +78,7 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                 ),
                 SizedBox(height: 80),
-                AuthMainButton(onPressed: () {}, title: "Sign In"),
+                AuthMainButton(onPressed: () {}, title: "Sign Up"),
                 SizedBox(height: 22),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -94,17 +95,10 @@ class _SignInPageState extends State<SignInPage> {
                     CupertinoButton(
                       padding: EdgeInsets.zero,
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return SignUpPage();
-                            },
-                          ),
-                        );
+                        Navigator.pop(context);
                       },
                       child: Text(
-                        "Sign Up",
+                        "Sign In",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: .w500,

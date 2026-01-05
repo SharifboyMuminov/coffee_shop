@@ -10,7 +10,7 @@ class PasswordTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: true,
-      textInputAction: textInputAction ?? TextInputAction.done,
+      textInputAction: textInputAction,
       cursorColor: Colors.white,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.only(top: 18, bottom: 18, left: 14),
