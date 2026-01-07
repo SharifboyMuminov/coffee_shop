@@ -1,3 +1,4 @@
+import 'package:coffee_shop/pages/home/home_page.dart';
 import 'package:coffee_shop/pages/widget/auth_main_button.dart';
 import 'package:coffee_shop/pages/widget/password_text_field.dart';
 import 'package:coffee_shop/pages/widget/phone_text_field.dart';
@@ -16,7 +17,6 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
       body: MainBackWidget(
         child: SafeArea(
           child: SingleChildScrollView(
@@ -78,7 +78,20 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
                 SizedBox(height: 80),
-                AuthMainButton(onPressed: () {}, title: "Sign Up"),
+                AuthMainButton(
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return HomePage();
+                        },
+                      ),
+                      (_) => false,
+                    );
+                  },
+                  title: "Sign Up",
+                ),
                 SizedBox(height: 22),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
